@@ -1,9 +1,13 @@
-Project Created with yarn
+### Project Created with yarn
+
 `yarn init -D`
 
-Using node with typescript
+### Using node with typescript
+
 `yarn add typescript -D`
+
 `yarn tsc --init`
+
 `yarn add ts-node-dev -D`
 
 # Funcionalidades
