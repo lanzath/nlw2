@@ -4,7 +4,7 @@ import PageHeader from '../../components/PageHeader';
 
 /**
  * New Teacher Form component
- * @returns {Element} TSX
+ * @returns React component
  */
 function TeacherForm() {
   return (

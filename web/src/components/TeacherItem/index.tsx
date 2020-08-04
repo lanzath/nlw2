@@ -2,6 +2,10 @@ import React from 'react';
 import './styles.css';
 import whatsApp from '../../assets/images/icons/whatsapp.svg';
 
+/**
+ * Teachers cards of content
+ * @returns React component
+ */
 function TeacherItem() {
   return (
     <article className="teacher-item">

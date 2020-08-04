@@ -9,7 +9,7 @@ import './styles.css';
 
 /**
  * Landing page component
- * @returns {Element} TSX
+ * @returns React component
  */
 function Landing() {
   return (
