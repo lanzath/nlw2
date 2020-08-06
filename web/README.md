@@ -1,3 +1,5 @@
+**Observação: ainda falta fazer o deploy do back-end para consumo de API**
+
 # Proffy Project from Rocketseat Next Level Week 2
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
