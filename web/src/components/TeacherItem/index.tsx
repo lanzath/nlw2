@@ -1,40 +1,63 @@
-import React from 'react';
+import React, { AnchorHTMLAttributes } from 'react';
 import './styles.css';
 import whatsApp from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
+
+export interface Teacher {
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  subject: string;
+  whatsapp: string;
+}
+
+interface TeacherItemProps extends AnchorHTMLAttributes<HTMLAnchorElement>  {
+  teacher: Teacher;
+}
 
 /**
  * Teachers cards of content
- * @returns React component
+ * @param teacher - Object
+ * @returns React function component
  */
-function TeacherItem() {
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, ...rest }) => {
+  function createNewConnection() {
+    api.post('connections', {
+      user_id: teacher.id,
+    });
+  }
+
   return (
     <article className="teacher-item">
       <header>
         <img
-          src="https://avatars3.githubusercontent.com/u/39680004?s=460&u=0c0824f5c818b262b90b2677c110b0462151c2fd&v=4"
-          alt="Thiago Lanza"
+          src={teacher.avatar}
+          alt={teacher.name}
         />
         <div>
-          <strong>Thiago Lanza</strong>
-          <span>Programação</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
 
-      <p>
-        Entusiasta pelo universo Dev em busca de constante evolução
-        <br />
-        <br />
-        Apaixonado por sofrer com códigos que não entende e colocar na prática aquele que entende, amante de javascript, typescript, php, laravel e node.
-      </p>
+      <p>{teacher.bio}</p>
+
       <footer>
         <p>
           Preço/Hora
-          <strong>R$ 40,00</strong>
+          <strong>{teacher.cost}</strong>
         </p>
-        <button type="button">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={createNewConnection}
+          href={`https://wa.me/${teacher.whatsapp}`}
+        >
           <img src={whatsApp} alt="WhatsApp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   );
