@@ -16,22 +16,22 @@ function StudyTabs() {
         style: {
           elevation: 0,
           shadowOpacity: 0,
-          height: 64,
+          height: 64
         },
         tabStyle: {
           flexDirection: 'row',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'center'
         },
         iconStyle: {
           flex: 0,
           width: 20,
-          height: 20,
+          height: 20
         },
         labelStyle: {
           fontFamily: 'Archivo_700Bold',
           fontSize: 13,
-          marginLeft: 16,
+          marginLeft: 16
         },
         inactiveBackgroundColor: '#fafafc',
         activeBackgroundColor: '#ebebf5',
