@@ -9,8 +9,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 /**
  * Input component
- * @params label
- * @param name
+ * @param label - string
+ * @param name - string
  * @param ...rest from InputHTMLAttributes
  * @returns React component
  */
