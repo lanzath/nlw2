@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { View, Image, Text } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
@@ -8,14 +8,16 @@ import styles from './styles';
 
 interface PageHeaderProps {
   title: string;
+  headerRight?: ReactNode;
 }
 
 /**
  * Header component for study screens
  * @param title string
+ * @param headerRight ReactNode can have a react component as property
  * @returns React function component
  */
-const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ title, headerRight, children }) => {
   const { navigate } = useNavigation();
 
   function handleGoBack() {
@@ -30,9 +32,15 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
         </BorderlessButton>
 
         <Image source={logoImg} resizeMode="contain" />
-
-        <Text style={styles.title}>{title}</Text>
       </View>
+
+      <View style={styles.header}>
+        <Text style={styles.title}>{title}</Text>
+
+        {headerRight}
+      </View>
+
+      {children}
     </View>
   );
 }
